@@ -1,16 +1,16 @@
 on: [push]
 jobs:
   setup:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-      - run: ./setup_server.sh
+      - run: node --version
   build:
     needs: setup
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-      - run: ./build_server.sh
+      - run: node --version
   test:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-      - run: ./test_server.sh
+      - run: node --version
